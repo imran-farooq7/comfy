@@ -8,7 +8,7 @@ const HomeLayout = () => {
 				<Header />
 				<Navbar />
 			</nav>
-			<section className="align-element">
+			<section className="align-element pt-10">
 				<Outlet />
 			</section>
 		</>
