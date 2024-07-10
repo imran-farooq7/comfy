@@ -1,3 +1,4 @@
+import ErrorElement from "./components/ErrorElement";
 import {
 	Login,
 	About,
@@ -12,6 +13,7 @@ import {
 	Register,
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { loader as landingLoader } from "./pages/Landing";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -21,6 +23,8 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				element: <Landing />,
+				errorElement: <ErrorElement />,
+				loader: landingLoader,
 			},
 			{
 				path: "about",
