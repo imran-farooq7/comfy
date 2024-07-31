@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
-interface Product {
+import { formatPrice } from "../../utils/helper";
+export interface Product {
 	id: number;
 	attributes: {
 		category: string;
@@ -24,7 +25,7 @@ const ProductsGrid = () => {
 				return (
 					<Link
 						key={product.id}
-						to={`/products/${product.id}`}
+						to={`/product/${product.id}`}
 						className="card w-full  shadow-xl hover:shadow-2xl transition duration-300 "
 					>
 						<figure className="px-4 pt-4">
@@ -36,7 +37,9 @@ const ProductsGrid = () => {
 						</figure>
 						<div className="card-body items-center text-center">
 							<h2 className="card-title capitalize tracking-wider">{title}</h2>
-							<span className="text-secondary">{dollarsAmount}</span>
+							<span className="text-secondary">
+								{formatPrice(+dollarsAmount)}
+							</span>
 						</div>
 					</Link>
 				);
